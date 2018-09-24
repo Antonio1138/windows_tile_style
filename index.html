@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Web Designer 238 - Aspect Ratio Layout</title>
+        
+        <!-- So the responsive styles work correctly -->         
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Third party -->
+        <link href="bower_components/normalize.css/normalize.css" rel="stylesheet" media="screen" />
+
+        <!-- First party -->
+        <link href="style.css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="one-half">
+                <div class="aspect" data-ratio="1:1">
+                    <div class="aspect-content">
+                        <h2 class="headline">Volcano Music Studio</h2>
+                        <p class="adr">
+                            <span class="street-address">Miraverde</span>
+                            <span class="region">Playa de las Americas</span>
+                            <span class="postal-code">38660, door 014</span>
+                        </p>        
+                    </div>
+                </div>
+            </div>
+            <div class="one-half">
+                <a href="#direction" title="Direction" class="directions">
+                    <div class="aspect" data-ratio="2:1">
+                        <img src="./img/teide.jpg" alt="" />
+
+                        <div class="aspect-content">
+                            <h4 class="headline">Tenerife</h2>        
+                        </div>
+                    </div>
+                </a>
+
+                <div class="one-half">
+                    <a href="#jobs" title="Jobs" class="jobs">
+                        <div class="aspect" data-ratio="1:1">
+
+                            <div class="aspect-content">
+                                <h4 class="headline">Music Production</h4>
+                                <ul>
+                                    <li>Recording</li>
+                                    <li>Sessions</li>
+                                    <li>Remastering</li>
+                                    <li>Marketing</li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="one-half">
+                    <a href="#brands" title="Brands" class="brands">
+                        <div class="aspect" data-ratio="1:1">
+                            
+                            <div class="aspect-content">
+                               
+                                <h4 class="headline">Brands</h4>
+                                <p>View our list of brands</p>
+                                <ul>
+                                    <li>Tama</li>
+                                    <li>Gibson Guitars</li>
+                                    <li>Korg</li>
+                                    <li>Yamaha</li>
+                                    <li>Shure</li>
+                                    <li>Marshall</li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>     
+        </div>
+
+        <div class="site-footer">
+            <p>Windows Tile Style example by Antonio Jesus Pinilla Belmez
+        </div>
+
+    </body>
+</body>    

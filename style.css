@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+
+/**********************************************************
+ * Typography
+ *********************************************************/
+html {
+    font-size: 62.5%;
+}
+body {
+    line-height: 1.6;
+    font-family: Helvetica, Arial, Sans-serif;
+    font-size:14px;
+    font-weight: 200;
+    background: rgb(55, 55, 55);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.headline {
+    line-height: 1;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.25em;
+}
+
+h2.headline {
+    font-size: 12rem;
+    letter-spacing: -2px;
+}
+
+h4.headline {
+    font-size: 4rem;
+    letter-spacing: -2px;
+}
+
+
+@media screen and (max-width:600px) {
+   h2.headline {
+       font-size: 8rem;
+   }
+}
+
+@media screen and (max-width:350px) {
+   h2.headline {
+       font-size: 6rem;
+   }
+}
+
+/**********************************************************
+ * For address markup
+ *********************************************************/
+.adr span {
+    display:block;
+    text-transform: uppercase;
+}
+
+/**********************************************************
+ * Give the container a nice shadow
+ *********************************************************/
+.container {
+    box-shadow: 0 0 20px #131313;
+    overflow: hidden;
+}
+
+/**********************************************************
+ * Site footer
+ *********************************************************/
+.site-footer {
+    font-size: 1.4rem;
+    color: #B5B5B5;
+    margin:30px 20px;
+}
+
+/**********************************************************
+ * Rudimentary grid system
+ *********************************************************/
+.one-half {
+    width: 50%;
+    float: left;
+}
+
+@media screen and (max-width:1000px) {
+    .one-half {
+        width:100%;
+    }
+
+    .one-half .one-half {
+        width:50%;
+    }
+}
+
+
+@media screen and (max-width:420px) {
+    .one-half .one-half {
+        width: 100%;
+    }
+}
+
+
+/**********************************************************
+ * Aspect ratio pods
+ *********************************************************/
+.aspect {
+    position: relative;
+}
+
+.aspect[data-ratio="16:9"] {
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background: lime;
+    overflow: hidden;
+}
+
+.aspect[data-ratio="4:3"] {
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    background: rgb(223, 28, 66);
+    overflow: hidden;
+    color: #fff;
+}
+
+.aspect[data-ratio="1:1"] {
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background: rgb(211, 22, 22);
+    overflow: hidden;
+    color: #fff;
+}
+
+.aspect[data-ratio="2:1"] {
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    /* background: rgb(114, 173, 240); */
+    overflow: hidden;
+    color: #fff;
+    /* box-shadow: 0 0 10px #000; */
+}
+
+.aspect-content {
+    margin: 20px;
+    z-index: 1;
+}
+
+.aspect img {
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.aspect ul {
+    list-style-position: outside;
+
+    padding: 0 5px;
+    list-style-type: circle;
+}
+
+
+@media screen and (max-width:1000px) {
+    /* Make 1:1 become 2:1 */
+    .aspect[data-ratio="1:1"] {
+        padding-bottom:50%
+    }
+    /* Make 2:1 become 4:1 */
+    .aspect[data-ratio="2:1"] {
+        padding-bottom:25%;
+    }
+}
+
+
+@media screen and (max-width:850px) {
+    .aspect[data-ratio="1:1"] { /* Make 1:1 become 2:3 */
+        padding-bottom:66.6%
+    }
+}
+@media screen and (max-width:600px) {
+    .aspect[data-ratio="1:1"] { /* Make 1:1 become 1:1 again */
+        padding-bottom:100%
+    }
+}
+
+@media screen and (max-width:420px) {
+    /* Make 2:1 become 2:1 again */
+    .aspect[data-ratio="2:1"] {
+        padding-bottom:50%
+    }
+}
+
+/**********************************************************
+ * Directions Pod
+ *********************************************************/
+.directions .aspect-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid #fff;
+    color: rgb(55, 55, 55);
+    background-color: rgba(255, 255, 255, 0.83);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transition: all .5s cubic-bezier(0, 1.14, 1, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #000;
+}
+
+.directions .headline {
+    padding: .25em 20px
+}
+
+.directions:hover .aspect-content {
+    background-color: rgba(47, 47, 47, 0.8);
+    color: #fff;
+}
+
+.directions img {
+    transition: opacity .5s cubic-bezier(0, 1.14, 1, 1);
+}
+
+.directions:hover img {
+    opacity:.5;
+}
+
+/**********************************************************
+ * Music Production Tile
+ *********************************************************/
+.jobs {
+    text-decoration: none;
+}
+
+.jobs .aspect {
+     background-color: rgb(216, 216, 216);
+     color: #373737;
+     transition: opacity .5s cubic-bezier(0, 1.14, 1, 1);
+}
+
+.jobs:hover .aspect {
+    opacity:.4;
+}
+
+.jobs .aspect:after {
+    content: '';
+    width:13px;
+    height:20px;
+    background-image:url('./img/arrow.png');
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    transition: right .5s cubic-bezier(0, 1.14, 1, 1);
+}
+
+.jobs:hover .aspect:after {
+    right:35px;
+}
+
+
+
+/**********************************************************
+ * Brands Tile
+ *********************************************************/
+.brands {
+    text-decoration: none;
+}
+
+.brands .aspect {
+     background-color: rgb(23, 183, 240);
+     color: #1B1818;
+     transition: opacity .5s cubic-bezier(0, 1.14, 1, 1);
+     
+}
+
+.brands:hover .aspect {
+    opacity:.4;
+}
+
+.brands .aspect:after {
+    content: '';
+    width:13px;
+    height:20px;
+    background-image:url('./img/arrow.png');
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    transition: right .5s cubic-bezier(0, 1.14, 1, 1);
+}
+
+.brands:hover .aspect:after {
+    right:35px;
+}
